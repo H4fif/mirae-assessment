@@ -41,7 +41,7 @@ const chartConfig = {
   },
 } satisfies ChartConfig;
 
-export function ChartBarStacked() {
+export default function ChartBarStacked() {
   return (
     <Card>
       <CardHeader>

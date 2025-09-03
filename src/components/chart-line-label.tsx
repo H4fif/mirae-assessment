@@ -53,7 +53,7 @@ type Props = {
   description?: JSX.Element;
 };
 
-export function ChartLineLabel({ description, title }: Props) {
+export default function ChartLineLabel({ description, title }: Props) {
   return (
     <Card>
       <CardHeader>
