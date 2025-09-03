@@ -1,13 +1,18 @@
 'use client';
 
-import { TrendingUp } from 'lucide-react';
-import { CartesianGrid, LabelList, Line, LineChart, XAxis } from 'recharts';
+import {
+  CartesianGrid,
+  LabelList,
+  Line,
+  LineChart,
+  XAxis,
+  YAxis,
+} from 'recharts';
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
@@ -19,6 +24,7 @@ import {
 } from '@/components/ui/chart';
 
 import type { ChartConfig } from '@/components/ui/chart';
+import type { JSX } from 'react';
 
 export const description = 'A line chart with a label';
 
@@ -38,16 +44,22 @@ const chartConfig = {
   },
   mobile: {
     label: 'Mobile',
-    color: 'var(--chart-2)',
+    color: '#7CB6D3',
   },
 } satisfies ChartConfig;
 
-export function ChartLineLabel() {
+type Props = {
+  title: string;
+  description?: JSX.Element;
+};
+
+export function ChartLineLabel({ description, title }: Props) {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Line Chart - Label</CardTitle>
-        <CardDescription>January - June 2024</CardDescription>
+        <CardTitle>{title}</CardTitle>
+
+        {!description ? null : <CardDescription>{description}</CardDescription>}
       </CardHeader>
 
       <CardContent>
@@ -62,6 +74,17 @@ export function ChartLineLabel() {
             }}
           >
             <CartesianGrid vertical={false} />
+
+            <YAxis
+              dataKey="desktop"
+              type="number"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+              tickFormatter={(value) => {
+                return value;
+              }}
+            />
 
             <XAxis
               dataKey="month"
@@ -118,16 +141,6 @@ export function ChartLineLabel() {
           </LineChart>
         </ChartContainer>
       </CardContent>
-
-      <CardFooter className="flex-col items-start gap-2 text-sm">
-        <div className="flex gap-2 leading-none font-medium">
-          Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-        </div>
-
-        <div className="text-muted-foreground leading-none">
-          Showing total visitors for the last 6 months
-        </div>
-      </CardFooter>
     </Card>
   );
 }
