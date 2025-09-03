@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { IconInnerShadowTop } from '@tabler/icons-react';
 import { NavMain } from '@/components/nav-main';
 import { NavSecondary } from '@/components/nav-secondary';
 import { NavUser } from '@/components/nav-user';
@@ -14,6 +13,7 @@ import {
   SidebarMenuItem,
 } from '@/components/ui/sidebar';
 import SIDEBAR_MENU from '@/constants/sidebar-menu';
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
@@ -26,8 +26,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <a href="#">
-                <IconInnerShadowTop className="!size-5" />
-                <span className="text-base font-semibold">Mirae Assesment</span>
+                <Avatar className="h-8 w-8 rounded-lg">
+                  <AvatarImage src="./mirae-logo.ico" alt={'app logo'} />
+                  <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+                </Avatar>
+
+                <span className="text-base font-semibold">
+                  Mirae Assessment
+                </span>
               </a>
             </SidebarMenuButton>
           </SidebarMenuItem>

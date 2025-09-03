@@ -15,7 +15,7 @@ const ChartLineLabel = lazy(() => import('@/components/chart-line-label'));
 export default function DashboardPage() {
   return (
     <>
-      <Helmet title="Dashboard | Mirae Assesment" />
+      <Helmet title="Dashboard | Mirae Assessment" />
 
       <Layout>
         <Suspense fallback={<Loader />}>

@@ -26,6 +26,7 @@ import { Button } from '@/components/ui/button';
 import { Spinner } from '@/components/ui/shadcn-io/spinner';
 import { Suspense } from 'react';
 import Loader from '@/components/loader';
+import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
 const LoginPage = () => {
   const { form, isLoggingIn, showPassword, onSubmit, togglePassword } =
@@ -33,11 +34,18 @@ const LoginPage = () => {
 
   return (
     <>
-      <Helmet title="Login | Mirae Assesment" />
+      <Helmet title="Login | Mirae Assessment" />
 
       <Suspense fallback={<Loader />}>
         <div className="h-screen w-screen grid place-items-center p-6">
           <Card className="w-full md:w-1/2 2xl: xl:w-1/3">
+            <div className="flex justify-center">
+              <Avatar className="h-1/2 w-1/2 rounded-lg">
+                <AvatarImage src="./mirae-logo.jpg" alt={'app logo'} />
+                <AvatarFallback className="rounded-lg">CN</AvatarFallback>
+              </Avatar>
+            </div>
+
             <CardHeader>
               <CardTitle>Login to your account</CardTitle>
 
