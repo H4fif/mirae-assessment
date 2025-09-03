@@ -2,14 +2,18 @@ import { useState } from 'react';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import { useNavigate } from 'react-router';
+import { useAuthStore } from './stores/auth.store';
 import './App.css';
 
 function App() {
   const navigate = useNavigate();
+  const { auth } = useAuthStore();
   const [count, setCount] = useState(0);
 
-  if (count > 0) {
+  if (!auth) {
     navigate('/login');
+  } else {
+    navigate('/dashboard');
   }
 
   return (
