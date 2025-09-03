@@ -1,7 +1,8 @@
+import { createBrowserRouter } from 'react-router';
 import App from '@/App';
 import DashboardPage from '@/app/dashboard';
 import LoginPage from '@/app/login';
-import { createBrowserRouter } from 'react-router';
+import { ROUTE } from '@/constants';
 
 export default createBrowserRouter([
   {
@@ -9,11 +10,11 @@ export default createBrowserRouter([
     Component: App,
   },
   {
-    path: '/dashboard',
+    path: ROUTE.DASHBOARD,
     Component: DashboardPage,
   },
   {
-    path: '/login',
+    path: ROUTE.LOGIN,
     Component: LoginPage,
   },
 ]);
