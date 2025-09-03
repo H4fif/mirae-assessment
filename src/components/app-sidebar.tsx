@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { IconInnerShadowTop } from '@tabler/icons-react';
-import { NavDocuments } from '@/components/nav-documents';
 import { NavMain } from '@/components/nav-main';
 import { NavSecondary } from '@/components/nav-secondary';
 import { NavUser } from '@/components/nav-user';
@@ -34,9 +33,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+
       <SidebarContent>
         <NavMain items={SIDEBAR_MENU.navMain} />
-        <NavDocuments items={SIDEBAR_MENU.documents} />
         <NavSecondary items={SIDEBAR_MENU.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
