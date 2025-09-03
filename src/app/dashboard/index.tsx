@@ -9,8 +9,17 @@ import { ChartBarInteractive } from '@/components/chart-bar-interactive';
 import { ChartBarStacked } from '@/components/chart-bar-stacked';
 import { ChartLineLabel } from '@/components/chart-line-label';
 import { Helmet } from 'react-helmet';
+import { useAuthStore } from '@/stores/auth.store';
+import { useNavigate } from 'react-router';
 
 export default function DashboardPage() {
+  const navigate = useNavigate();
+  const { auth } = useAuthStore();
+
+  if (!auth) {
+    navigate('/login');
+  }
+
   return (
     <>
       <Helmet title="Dashboard | Mirae Assesment" />
