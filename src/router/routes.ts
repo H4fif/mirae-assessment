@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router';
-import DashboardPage from '@/app/dashboard';
-import LoginPage from '@/app/login';
 import { ROUTE } from '@/constants';
+import { lazy } from 'react';
+
+const DashboardPage = lazy(() => import('@/app/dashboard'));
+const LoginPage = lazy(() => import('@/app/login'));
 
 export default createBrowserRouter([
   {
