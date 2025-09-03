@@ -2,15 +2,15 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { RouterProvider } from 'react-router/dom';
 import router from './router/routes.ts';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import ReactQueryProvider from './providers/react-query.provider.tsx';
+import { Toaster } from './components/ui/sonner.tsx';
 import './index.css';
-
-const queryClient = new QueryClient();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
+    <ReactQueryProvider>
       <RouterProvider router={router} />
-    </QueryClientProvider>
+      <Toaster />
+    </ReactQueryProvider>
   </StrictMode>
 );
