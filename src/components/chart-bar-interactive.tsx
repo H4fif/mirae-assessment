@@ -198,7 +198,6 @@ export function ChartBarInteractive() {
               tickMargin={10}
               axisLine={false}
               tickFormatter={(value) => {
-                console.log({ value });
                 return value;
               }}
             />
