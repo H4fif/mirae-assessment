@@ -15,6 +15,7 @@ export const useAuthStore = create<AuthStoreState & AuthStoreAction>()(
           set((state) => ({ ...state, auth: payload }));
         },
         logout: () => {
+          localStorage.clear();
           set((state) => ({ ...state, auth: undefined }));
         },
       }),
