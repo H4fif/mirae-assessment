@@ -1,7 +1,7 @@
 'use client';
 
 import * as React from 'react';
-import { Bar, BarChart, CartesianGrid, XAxis } from 'recharts';
+import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from 'recharts';
 
 import {
   Card,
@@ -190,6 +190,18 @@ export function ChartBarInteractive() {
             }}
           >
             <CartesianGrid vertical={false} />
+
+            <YAxis
+              dataKey={activeChart}
+              type="category"
+              tickLine={false}
+              tickMargin={10}
+              axisLine={false}
+              tickFormatter={(value) => {
+                console.log({ value });
+                return value;
+              }}
+            />
 
             <XAxis
               dataKey="date"
