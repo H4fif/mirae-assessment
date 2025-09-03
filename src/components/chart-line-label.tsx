@@ -78,11 +78,31 @@ export function ChartLineLabel() {
 
             <Line
               dataKey="desktop"
-              type="natural"
+              type="linear"
               stroke="var(--color-desktop)"
               strokeWidth={2}
               dot={{
                 fill: 'var(--color-desktop)',
+              }}
+              activeDot={{
+                r: 6,
+              }}
+            >
+              <LabelList
+                position="top"
+                offset={12}
+                className="fill-foreground"
+                fontSize={12}
+              />
+            </Line>
+
+            <Line
+              dataKey="mobile"
+              type="linear"
+              stroke="var(--color-mobile)"
+              strokeWidth={2}
+              dot={{
+                fill: 'var(--color-mobile)',
               }}
               activeDot={{
                 r: 6,
