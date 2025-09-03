@@ -45,8 +45,36 @@ export default function DashboardPage() {
                 <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 px-4 lg:px-6">
                   <ChartBarInteractive />
                   <ChartBarStacked />
-                  <ChartLineLabel />
-                  <ChartLineLabel />
+                  <ChartLineLabel
+                    title="Client Asset AUM"
+                    description={
+                      <div className="flex justify-end items-center">
+                        <div>
+                          <div className="flex items-center gap-2">
+                            <span className="rounded-full size-4 inline-block bg-[#F4720F]"></span>
+                            Client Asset AUM
+                          </div>
+
+                          <div className="flex items-center gap-2">
+                            <span className="rounded-full size-4 inline-block bg-[#7CB6D3]"></span>
+                            Exchange (MM)
+                          </div>
+                        </div>
+                      </div>
+                    }
+                  />
+
+                  <ChartLineLabel
+                    title="Trading Value"
+                    description={
+                      <div className="flex justify-end items-center">
+                        <div className="flex items-center gap-2">
+                          <span className="rounded-full size-4 inline-block bg-[#F4720F]"></span>
+                          Domestic (SMM)
+                        </div>
+                      </div>
+                    }
+                  />
                 </div>
 
                 <DataTable data={data} />
